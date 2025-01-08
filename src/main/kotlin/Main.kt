@@ -17,6 +17,7 @@ import sum
 
 import time
 import url
+import utilities.Caculation
 
 
 fun main() {
@@ -120,9 +121,33 @@ fun main() {
         Quality.EXCELLENT -> "this is excellent"
     }
     println(qualityMessage)
-    val requestError:RequestError = RequestError.BAD_REQUEST
+    val requestError:RequestError = RequestError.SUCCESS
     println(requestError)//in ra loai nào ở 123
     println(requestError.message) //in ra tin nhắn được chọn ơ 123
+    println(requestError.wordCount())
+    // define a key-values object
+    var person1 = object {
+
+        var name = "Hoang"
+        var emailAdress = "sunlinght4@gmail.com"
+        var age= 28
+        override fun toString(): String=
+            "name:$name, email=$emailAdress, age=$age "
+    }
+    println(person1)
+    var person2 = mutableMapOf<String, Any>(
+        "name" to "Vinh" ,
+        "email" to "vietnamvodich@gmail.com",
+        "age" to 12
+    )
+    person2["email"] = "Vinhdepzai@gmail.com" // you can change if person 2 is a "mutable map"
+    person2["age"] = "19"
+    println(person2)
+    //companion object => like static
+    println(Caculation.multiply(3,5))
+    println("PI = ${ Caculation.PI}")
+
+
 
 
 
